@@ -322,7 +322,7 @@ function create_database {
 ##################################
 
 function apt_update {
-  apt update -y && apt upgrade -y
+  apt update && apt upgrade
 }
 
 function ubuntu18_dep {
@@ -406,13 +406,13 @@ function debian_dep {
   echo "* Installing dependencies for Debian 10.."
 
   # MariaDB need dirmngr
-  apt -y install dirmngr
+  apt install dirmngr
 
   # Update repositories list
   apt update
 
   # install dependencies
-  apt -y install php7.4 php7.4-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git redis-server
+  apt install php7.4 php7.4-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git redis-server
 
   # enable services
   systemctl start mariadb
@@ -519,7 +519,7 @@ function centos_php {
 
 function firewall_ufw {
   apt update
-  apt install ufw -y
+  apt install ufw
 
   echo -e "\n* Enabling Uncomplicated Firewall (UFW)"
   echo "* Opening port 22 (SSH), 80 (HTTP) and 443 (HTTPS)"
