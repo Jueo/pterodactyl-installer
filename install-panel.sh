@@ -412,7 +412,7 @@ function debian_dep {
   apt update
 
   # install dependencies
-  apt -y install php7.3 php7.3-cli php7.3-common php7.3-gd php7.3-mysql php7.3-mbstring php7.3-bcmath php7.3-xml php7.3-fpm php7.3-curl php7.3-zip mariadb-server nginx curl tar unzip git redis-server
+  apt -y install php7.4 php7.4-{cli,gd,mysql,pdo,mbstring,tokenizer,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git redis-server
 
   # enable services
   systemctl start mariadb
