@@ -147,13 +147,13 @@ function check_os_comp {
   elif [ "$OS" == "debian" ]; then
     if [ "$OS_VER_MAJOR" == "8" ]; then
       SUPPORTED=true
-      PHP_SOCKET="/run/php/php7.3-fpm.sock"
+      PHP_SOCKET="/run/php/php7.4-fpm.sock"
     elif [ "$OS_VER_MAJOR" == "9" ]; then
       SUPPORTED=true
-      PHP_SOCKET="/run/php/php7.3-fpm.sock"
+      PHP_SOCKET="/run/php/php7.4-fpm.sock"
     elif [ "$OS_VER_MAJOR" == "10" ]; then
       SUPPORTED=true
-      PHP_SOCKET="/run/php/php7.3-fpm.sock"
+      PHP_SOCKET="/run/php/php7.4-fpm.sock"
     else
       SUPPORTED=false
     fi
@@ -272,7 +272,7 @@ function install_pteroq {
 }
 
 function create_database {
-  if [ "$OS" == "centos" ]; then
+  if [ "$OS" == "debian" ]; then
     # secure MariaDB
     echo "* MariaDB secure installation. The following are safe defaults."
     echo "* Set root password? [Y/n] Y"
